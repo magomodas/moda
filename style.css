@@ -1,0 +1,253 @@
+/* Estilos Gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #353535;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #353535;
+  border-bottom: 1px solid #00ffff;
+}
+
+header .logo h1 {
+  margin: 0;
+  font-size: 40px;
+  color: #f8f1d6;
+}
+
+header .logo span {
+  color: #04c400;
+  font-size: 3rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+/* Banner Rotativo */
+.slider{
+  margin-top: 20px;
+  margin: 0 auto;
+  width: 533px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slides{
+  width: 300%;
+  height: 200px;
+  display: flex;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 25%;
+  position: relative;
+  transition: 2s;
+}
+
+.slide img{
+  width: 400px;
+}
+
+.manual-navigation{
+  position: absolute;
+  width: 800px;
+  margin-top: 70px;
+  margin-left: -199px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn{
+  border: 2px solid #fff;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+  background-color: #fff;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -25%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -50%;
+}
+
+.navigation-auto div{
+  border: 2px solid #ffd700;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.navigation-auto{
+  position: absolute;
+  width: 800px;
+  margin-top: 270px;
+  margin-left: -199px;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background-color: #fff;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background-color: #fff;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background-color: #fff;
+}
+
+
+/* Animação do Carrossel */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* Produtos */
+.produtos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.produto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #202020;
+  border-radius: 10px;
+}
+
+.imagem-produto {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.produto .detalhes {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.produto .detalhes h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+  
+}
+
+.produto .detalhes p {
+  margin: 5px 0;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.produto button {
+  padding: 10px 15px;
+  background-color: #04c400;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.produto button:hover {
+  background-color: #01bbbb;
+}
+
+.produto button>a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  
+
+  header .logo h1 {
+    margin: 0;
+    font-size: 29px;
+    color: #fff;
+    font-family: cursive;
+  }
+
+  header .logo span {
+    color: #ffd700;
+    font-size: 25px;
+    color: #f8f1d6;
+    font-family: cursive;
+  }
+
+  .nav-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .logo {
+    margin-right: 55px;
+  }
+  
+
+
+  .produto {
+    flex-direction: column;
+  }
+
+  .produto .imagem-produto {
+     width: 150px;
+     height: 150px;
+    margin-bottom: 15px;
+  }
+}
